@@ -1,0 +1,145 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "tags": {
+      "value": {
+        "applications": "orbit",
+        "service": "mssql"
+      }
+    },    
+    "location": {
+      "value": "westeurope"
+    },
+    "virtualNetworkName": {
+      "value": "vnet_ARM_001"
+    },
+    "ipConfigName": {
+      "value": "ipconfig"
+    },
+    "subnetName": {
+      "value": "sb-db"
+    },
+    "vmName": {
+      "value": "TESTESQL01"
+    },
+    "vmSize": {
+      "value": "Standard_DS2_v2"
+    },
+    "osDiskType": {
+      "value": "Premium_LRS"
+    },
+    "dataDisks": {
+      "value": [
+        {
+          "createOption": "empty",
+          "caching": "ReadOnly",
+          "writeAcceleratorEnabled": false,
+          "storageAccountType": "Premium_LRS",
+          "diskSizeGB": 64
+        },
+        {
+          "createOption": "empty",
+          "caching": "ReadOnly",
+          "writeAcceleratorEnabled": false,
+          "storageAccountType": "Premium_LRS",
+          "diskSizeGB": 64
+        },
+        {
+          "createOption": "empty",
+          "caching": "None",
+          "writeAcceleratorEnabled": false,
+          "storageAccountType": "Premium_LRS",
+          "diskSizeGB": 32
+        },
+        {
+          "createOption": "empty",
+          "caching": "None",
+          "writeAcceleratorEnabled": false,
+          "storageAccountType": "Premium_LRS",
+          "diskSizeGB": 32
+        },
+        {
+          "createOption": "empty",
+          "caching": "ReadOnly",
+          "writeAcceleratorEnabled": false,
+          "storageAccountType": "Premium_LRS",
+          "diskSizeGB": 32
+        },
+        {
+          "createOption": "empty",
+          "caching": "ReadOnly",
+          "writeAcceleratorEnabled": false,
+          "storageAccountType": "Premium_LRS",
+          "diskSizeGB": 32
+        }
+      ]
+    },
+    "sqlServerImageType": {
+      "value": "sql2019-ws2019"
+    },
+    "sqlImageSku": {
+      "value": "sqldev-gen2"
+    },
+    "sqlStorageWorkloadType": {
+      "value": "OLTP"
+    },
+    "sqlPortNumber": {
+      "value": 1433
+    },
+    "sqlManagement": {
+      "value": "Full"
+    },
+    "sqlServerLicenseType": {
+      "value": "PAYG"
+    },
+    "autoPatchEnabled": {
+      "value": true
+    },
+    "autoPatchDayofWeek": {
+      "value": "Sunday"
+    },
+    "maintenanceWindowDuration": {
+      "value": 60
+    },
+    "maintenanceWindowStartingHour": {
+      "value": 2
+    },
+    "connectivityType": {
+      "value": "PRIVATE"
+    },
+    "dataPath": {
+      "value": "F:\\SQLData"
+    },
+    "dataDisksLUNs": {
+      "value": [
+        0,
+        1
+      ]
+    },
+    "logPath": {
+      "value": "G:\\SQLLog"
+    },
+    "logDisksLUNs": {
+      "value": [
+        2,
+        3
+      ]
+    },
+    "tempDBPath": {
+      "value": "H:\\SQLTemp"
+    },
+    "tempDBDisksLUNs": {
+      "value": [
+        4,
+        5
+      ]
+    },
+    "adminUsername": {
+      "value": "$(adminUsername)"
+    },
+    "adminPassword": {
+      "value": "$(Testing132!!)"
+    }
+  }
+}
